@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO-LIST</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(150deg, rgb(114, 198, 231), rgb(6, 27, 96));
+            padding: 10px;
+        }
+
+        .todo-app{
+            width: 100%;
+            max-width: 540px;
+            background: white;
+            margin: 50px auto;
+            padding: 40px 30px 70px;
+            border-radius: 10px;
+        }
+
+        .todo-app h2{
+            color:rgb(6, 27, 96);
+            display: flex;
+            align-items: center;
+            margin-bottom:20px;
+        }
+
+        .todo-app h2 img{
+            width: 30px;
+            margin-left: 10px;
+        }
+
+        .box-input{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background:#edeef0;
+            border-radius: 30px;
+            padding-left:20px;
+            margin-bottom: 25px;
+        }
+
+        .box-input input[type="text"]{
+           flex: 1;
+           border: none;
+           outline: none;
+           background: transparent;
+           padding: 10px;
+           font-weight: 14px;
+        }
+
+        button{
+            border: none;
+            outline: none;
+            padding: 16px 50px;
+            background-color: orange;
+            color: rgb(240, 244, 247);
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 40px;
+        }
+
+     .list-container li{
+            list-style-type: none;
+            padding: 12px 8px 12px 50px;
+            font-size: 18px;
+            user-select: none;
+            cursor: pointer;
+            position: relative;
+
+        }
+
+         .list-container li::before{
+            content: " ";
+            position: absolute;
+            height: 28px;
+            width: 28px;
+            border-radius: 50%;
+            background-image: url(assets/img/unchecked.png);
+            background-size: cover;
+            background-position: center;
+            left: 8px;
+            top: 12px;
+         }
+
+         .list-container li.complete{
+           color: #555;
+           text-decoration: line-through;
+         }
+         .list-container li.completed::before{
+            background-image: url(assets/img/checked.png);
+         }
+
+         .list-container li span{
+            position: absolute;
+            right: 0;
+            top: 5px;
+            width: 40px;
+            height: 40px;
+            color: #555;
+            line-height: 40px;
+            text-align:center;
+            font-size: 22px;
+         }
+
+         .list-container li span:hover{
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border-radius: 50%;
+         }
+
+        
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="todo-app">
+            <h2>To-do List <img src="assets/img/icon.png" alt="lista di cose da fare"></h2>
+            <div class="box-input">
+                <input type="text" id="input" placeholder="Aggiungi Testo">
+                <button>Aggiungi</button>
+            </div>
+            <ul class="list-container"></ul>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
